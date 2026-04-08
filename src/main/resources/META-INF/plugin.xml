@@ -1,0 +1,46 @@
+<idea-plugin>
+    <id>com.goga</id>
+    <name>Goga</name>
+    <vendor>Goga</vendor>
+    <version>1.0.0</version>
+
+    <description><![CDATA[
+        Goga — hides files with specific extensions from the Project View tree
+        and associates CODEMANIFEST files as YAML.
+        Configure in Settings > Tools > Goga.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+
+    <idea-version since-build="243"/>
+
+    <resource-bundle>messages.HideExtensionBundle</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <treeStructureProvider
+            implementation="com.QArium.hidebyextension.projectview.HideByExtensionTreeProvider"/>
+
+        <applicationService
+            serviceImplementation="com.QArium.hidebyextension.settings.HideExtensionSettings"/>
+
+        <applicationConfigurable
+            parentId="tools"
+            instance="com.QArium.hidebyextension.settings.HideExtensionConfigurable"
+            id="com.QArium.hidebyextension.settings.HideExtensionConfigurable"
+            displayName="Goga"/>
+
+        <applicationActivationListener
+            class="com.QArium.hidebyextension.CodemanifestAppListener"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="com.QArium.hidebyextension.ToggleHideAction"
+            class="com.QArium.hidebyextension.actions.ToggleHideAction"
+            text="Hide Extensions"
+            description="Toggle file hiding by extension">
+            <add-to-group group-id="ProjectViewToolbar" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
