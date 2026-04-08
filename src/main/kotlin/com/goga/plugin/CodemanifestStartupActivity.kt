@@ -1,7 +1,7 @@
-package com.QArium.hidebyextension
+package com.goga.plugin
 
-import com.QArium.hidebyextension.settings.CodemanifestAssociation
-import com.QArium.hidebyextension.settings.HideExtensionSettings
+import com.goga.plugin.settings.CodemanifestAssociation
+import com.goga.plugin.settings.HideExtensionSettings
 import com.intellij.openapi.application.ApplicationActivationListener
 import com.intellij.openapi.wm.IdeFrame
 

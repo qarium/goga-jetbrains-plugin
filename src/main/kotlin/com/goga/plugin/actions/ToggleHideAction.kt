@@ -1,6 +1,6 @@
-package com.QArium.hidebyextension.actions
+package com.goga.plugin.actions
 
-import com.QArium.hidebyextension.settings.HideExtensionSettings
+import com.goga.plugin.settings.HideExtensionSettings
 import com.intellij.ide.projectView.ProjectView
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.ToggleAction

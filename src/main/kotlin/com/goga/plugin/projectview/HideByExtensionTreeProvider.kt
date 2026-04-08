@@ -1,4 +1,4 @@
-package com.QArium.hidebyextension.projectview
+package com.goga.plugin.projectview
 
 import com.intellij.ide.projectView.TreeStructureProvider
 import com.intellij.ide.projectView.ViewSettings
@@ -6,7 +6,7 @@ import com.intellij.ide.util.treeView.AbstractTreeNode
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFile
-import com.QArium.hidebyextension.settings.HideExtensionSettings
+import com.goga.plugin.settings.HideExtensionSettings
 
 fun shouldShowFile(fileName: String, hiddenExtensions: List<String>): Boolean {
     if (hiddenExtensions.isEmpty()) return true

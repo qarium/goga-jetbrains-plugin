@@ -1,4 +1,4 @@
-package com.QArium.hidebyextension.settings
+package com.goga.plugin.settings
 
 import com.intellij.openapi.options.Configurable
 import com.intellij.openapi.wm.ToolWindowManager

@@ -19,25 +19,25 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <treeStructureProvider
-            implementation="com.QArium.hidebyextension.projectview.HideByExtensionTreeProvider"/>
+            implementation="com.goga.plugin.projectview.HideByExtensionTreeProvider"/>
 
         <applicationService
-            serviceImplementation="com.QArium.hidebyextension.settings.HideExtensionSettings"/>
+            serviceImplementation="com.goga.plugin.settings.HideExtensionSettings"/>
 
         <applicationConfigurable
             parentId="tools"
-            instance="com.QArium.hidebyextension.settings.HideExtensionConfigurable"
-            id="com.QArium.hidebyextension.settings.HideExtensionConfigurable"
+            instance="com.goga.plugin.settings.HideExtensionConfigurable"
+            id="com.goga.plugin.settings.HideExtensionConfigurable"
             displayName="Goga"/>
 
         <applicationActivationListener
-            class="com.QArium.hidebyextension.CodemanifestAppListener"/>
+            class="com.goga.plugin.CodemanifestAppListener"/>
     </extensions>
 
     <actions>
         <action
-            id="com.QArium.hidebyextension.ToggleHideAction"
-            class="com.QArium.hidebyextension.actions.ToggleHideAction"
+            id="com.goga.plugin.ToggleHideAction"
+            class="com.goga.plugin.actions.ToggleHideAction"
             text="Hide Extensions"
             description="Toggle file hiding by extension">
             <add-to-group group-id="ProjectViewToolbar" anchor="last"/>
