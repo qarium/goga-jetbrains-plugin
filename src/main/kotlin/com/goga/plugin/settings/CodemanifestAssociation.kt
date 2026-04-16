@@ -2,6 +2,7 @@ package com.goga.plugin.settings
 
 import com.intellij.openapi.fileTypes.FileNameMatcher
 import com.intellij.openapi.fileTypes.FileTypeManager
+import com.intellij.openapi.application.ApplicationManager
 import org.jetbrains.yaml.YAMLFileType
 
 object CodemanifestAssociation {
@@ -14,11 +15,13 @@ object CodemanifestAssociation {
     }
 
     fun applySetting(enabled: Boolean) {
-        val ftm = FileTypeManager.getInstance()
-        if (enabled) {
-            ftm.associate(YAMLFileType.YML, matcher)
-        } else {
-            ftm.removeAssociation(YAMLFileType.YML, matcher)
+        ApplicationManager.getApplication().runWriteAction {
+            val ftm = FileTypeManager.getInstance()
+            if (enabled) {
+                ftm.associate(YAMLFileType.YML, matcher)
+            } else {
+                ftm.removeAssociation(YAMLFileType.YML, matcher)
+            }
         }
     }
 }
